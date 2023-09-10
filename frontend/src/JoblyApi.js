@@ -86,6 +86,21 @@ class JoblyApi {
     }
   }
 
+  // Updating a user profile
+  static async updateUser(username, data) {
+    try {
+      return await this.request(`users/${username}`, data, "patch");
+    } catch (error) {
+      console.error('Error updating user:', error);
+      return null;
+    }
+  }
+
+  // // Apply for a job
+  // static async applyForJob(username, jobId) {
+  //   return await this.request(`users/${username}/jobs/${jobId}`, {}, "POST");
+  // }
+
 }
 
 // for now, put token ("testuser" / "password" on class)

@@ -1,3 +1,40 @@
+// import React, { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
+// import JoblyApi from '../../JoblyApi';
+
+// function CompanyDetails() {
+//   const { handle } = useParams();
+//   const [company, setCompany] = useState(null);
+
+//   useEffect(() => {
+//     async function fetchCompanyDetails() {
+//       try {
+//         const data = await JoblyApi.getCompany(handle);
+//         console.log("Company details fetched from API:", data);
+//         setCompany(data);
+//       } catch (error) {
+//         console.error('Error fetching company details:', error);
+//       }
+//     }
+//     fetchCompanyDetails();
+//   }, [handle]);
+
+//   if (!company) {
+//     return <div>Loading...</div>;
+//   }
+
+//   return (
+//     <div>
+//       <h1>{company.name}</h1>
+//       <p>{company.description}</p>
+//       <p>{company.salary}</p>
+//       <p>{company.equity}</p> 
+//     </div>
+//   );
+// }
+
+// export default CompanyDetails;
+
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import JoblyApi from '../JoblyApi';

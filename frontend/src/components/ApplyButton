@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import JoblyApi from '../JoblyApi';
+
+function ApplyButton({ jobId, hasApplied, username }) {
+  const [isApplied, setIsApplied] = useState(hasApplied);
+
+  async function handleApply() {
+    if (!isApplied) {
+      try {
+        await JoblyApi.applyForJob(username, jobId);
+        setIsApplied(true);
+        alert("Application sent.");
+      } catch (e) {
+        console.error(e);
+        alert("Failed to apply.");
+      }
+    }
+  }
+
+  return (
+    <button onClick={handleApply} disabled={isApplied}>
+      {isApplied ? "Applied" : "Apply"}
+    </button>
+  );
+}
+
+export default ApplyButton;

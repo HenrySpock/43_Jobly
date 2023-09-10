@@ -5,11 +5,12 @@ function UserInfo({ user }) {
   return <div>User Info: {user.username}</div>;
 }
 
-function NavBar({ user, logout }) {
+function NavBar({ currentUser, logout }) {
+  console.log(currentUser);
   return (
     <nav>
       <Link to="/">Jobly</Link>
-      {!user ? (
+      {!currentUser ? (
         <div>
           <Link to="/login">Login</Link>
           <Link to="/signup">Signup</Link>
@@ -19,8 +20,8 @@ function NavBar({ user, logout }) {
           <Link to="/companies">Companies</Link>
           <Link to="/jobs">Jobs</Link>
           <Link to="/profile">Profile</Link>
-          <button onClick={logout}>Logout</button>
-          <UserInfo user={user} />
+          <Link to="/logout" onClick={logout}>Logout</Link>
+          <UserInfo user={currentUser} />
         </div>
       )}
     </nav>

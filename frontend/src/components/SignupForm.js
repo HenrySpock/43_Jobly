@@ -9,7 +9,8 @@ const initialFormData = {
   lastName: '' 
 };
 
-function SignupForm() {
+// function SignupForm() {
+function SignupForm({ signup }) { 
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -21,12 +22,14 @@ function SignupForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await JoblyApi.registerUser(formData);
-      console.log('Token after registration:', response.token);
-      // Set token, set localStorage, redirect, etc, here 
-      JoblyApi.token = response.token; 
+      // const response = await JoblyApi.registerUser(formData);
+      // console.log('Token after registration:', response.token);
+      // // Set token, set localStorage, redirect, etc, here 
+      // JoblyApi.token = response.token; 
 
-      localStorage.setItem("jobly_token", response.token);
+      // localStorage.setItem("jobly_token", response.token);
+      // setFormData(initialFormData);
+      await signup(formData);
       setFormData(initialFormData);
 
     } catch (error) {
