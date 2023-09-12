@@ -1,8 +1,5 @@
-/* jobs.css */
-/* Add your styles here for the Jobs component */
 .container {
-  padding: 20px;
-  /* margin-bottom: 2rem; */
+  padding: 20px; 
 }
 
 .job-card {

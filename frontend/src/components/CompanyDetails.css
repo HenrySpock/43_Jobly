@@ -1,5 +1,3 @@
-/* CompanyDetails.css */
-
 .container {
   font-family: 'Arial', sans-serif;
   background-color: #fff;  
@@ -7,27 +5,23 @@
   text-align: center;
 }
 
-/* Style the h2 header for company name */
 h2 {
   font-size: 2rem;
-  /* margin-bottom: 1rem; */
+  
   color: #333;
 }
 
-/* Style the company description */
 p {
   font-size: 1rem;
   color: #666;
 }
 
-/* Style the h3 header for "Jobs Available" */
 h3 {
   font-size: 1.5rem;
   margin-top: 2rem;
   color: #007bff; 
 }
 
-/* Style individual job sections */
 .job-section {
   border: 1px solid #ddd;
   margin: 1rem 0;
@@ -37,15 +31,13 @@ h3 {
   text-align: left;
 }
 
-/* Style job titles */
 h4 {
   font-size: 1.5rem;
   margin: 10px 0;
   color: #007bff;
-  text-align: left; /* Left-justify the job titles */
+  text-align: left;  
 }
 
-/* Style salary and equity information */
 .job-info {
   font-size: 1rem;
   color: #333;
@@ -53,11 +45,11 @@ h4 {
 }
 
 .available {
-  text-align: left; /* Left-justify the text within the cards */
-  display: block; /* Ensure full card area is clickable */
-  padding: 10px; /* Add some padding for spacing */
-  text-decoration: none; /* Remove underlines from links */
-  color: #333; /* Text color for links */ 
+  text-align: left;  
+  display: block;  
+  padding: 10px;  
+  text-decoration: none;  
+  color: #333;  
   border: 1px solid #ddd;
   margin: 1rem 0;
   padding: 1rem;

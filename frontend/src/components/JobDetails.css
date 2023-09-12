@@ -1,14 +1,7 @@
-/* JobDetails.css */
-
-/* Apply the same font and background color as app.css */
 .centered-content { 
   padding: 20px;  
-}
+} 
 
-/* Style the h2 header for job title */
-
-
-/* Style the company handle, salary, and equity information */
 p {
   margin: 0.5rem 0;  
 }

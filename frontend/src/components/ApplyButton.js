@@ -1,4 +1,3 @@
-// Step 9.
 import React from 'react';
 
 function ApplyButton({ isApplied, applyForJob }) {

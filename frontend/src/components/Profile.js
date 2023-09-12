@@ -1,27 +1,5 @@
-// import React from 'react';
-// // import UserProfile from './UserProfile'; 
-
-// function UserProfile() {
-//   return <div>Profile Content</div>;
-// }
-
-// const Profile = () => {
-//   // Fetch user profile data from API and store in state
-
-//   return (
-//     <div>
-//       <h2>Profile</h2>
-//       <UserProfile />
-//     </div>
-//   );
-// };
-
-// export default Profile;
-
-
 import React, { useState, useEffect } from 'react';
 import JoblyApi from '../JoblyApi';
-
 import './Profile.css';
 
 function Profile({ currentUser, setCurrentUser }) {
@@ -46,26 +24,14 @@ function Profile({ currentUser, setCurrentUser }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(data => ({ ...data, [name]: value }));
-  }
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const updatedUser = await JoblyApi.updateUser(currentUser.username, formData);
-  //     setCurrentUser(updatedUser);  // Update the current user in the parent state
-  //   } catch (err) {
-  //     console.error("Error updating profile:", err);
-  //     setErrors(err);
-  //   }
-  // }
+  } 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let dataToSend = { ...formData };  
     delete dataToSend.username;  
     
-    try {
-      // const updatedUser = await JoblyApi.updateUser(currentUser.username, dataToSend);
+    try { 
       const returnedData = await JoblyApi.updateUser(currentUser.username, dataToSend);
       const updatedUser = returnedData.user;
       console.log("Returned user data after update:", updatedUser);
@@ -73,7 +39,7 @@ function Profile({ currentUser, setCurrentUser }) {
       if (!updatedUser.token && currentUser.token) {
         updatedUser.token = currentUser.token;
       }
-      setCurrentUser(updatedUser);  // Update the current user in the parent state
+      setCurrentUser(updatedUser);  
     } catch (err) {
       console.error("Error updating profile:", err);
       setErrors(err);
