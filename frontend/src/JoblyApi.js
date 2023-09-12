@@ -102,6 +102,16 @@ class JoblyApi {
     return await this.request(`users/${username}/jobs/${jobId}`, {}, "POST");
   }
 
+  //Forgot to add search bar - CompaniesList:
+  static async searchCompanies(filter) {
+    return await this.request('companies', filter);
+  }
+
+  //Forgot to add search bar - JobsList:
+  static async searchJobs(filter) {
+    return await this.request('jobs', filter);
+  }
+
 }
 
 // for now, put token ("testuser" / "password" on class)
