@@ -1,0 +1,17 @@
+/* jobs.css */
+/* Add your styles here for the Jobs component */
+.container {
+  padding: 20px;
+  /* margin-bottom: 2rem; */
+}
+
+.job-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  background-color: #f7f7f7;
+}
+
+.job-card:hover {
+  background-color: #eaeaea;
+} 

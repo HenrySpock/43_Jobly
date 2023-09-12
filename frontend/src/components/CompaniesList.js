@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import JoblyApi from '../JoblyApi';
 
+import './CompaniesList.css';
+
 function CompaniesList() {
   const [companies, setCompanies] = useState([]);
 
@@ -19,7 +21,7 @@ function CompaniesList() {
   }, []);
 
   return (
-    <div>
+    <div className="centered-content">
       <h1>Companies</h1>
       <ul>
         {companies.map(company => (

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import JoblyApi from '../JoblyApi';
 
+import './JobsList.css';
+
 function JobsList() {
   const [jobs, setJobs] = useState([]);
 
@@ -18,7 +20,7 @@ function JobsList() {
   }, []);
 
   return (
-    <div>
+    <div className="centered-content">
       <h1>Jobs</h1>
       <ul>
         {jobs.map(job => (

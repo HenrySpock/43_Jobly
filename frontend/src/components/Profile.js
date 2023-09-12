@@ -22,6 +22,8 @@
 import React, { useState, useEffect } from 'react';
 import JoblyApi from '../JoblyApi';
 
+import './Profile.css';
+
 function Profile({ currentUser, setCurrentUser }) {
   const [formData, setFormData] = useState({
     username: currentUser.username || '',
@@ -83,7 +85,7 @@ function Profile({ currentUser, setCurrentUser }) {
   }
 
   return (
-    <div>
+    <div className="centered-content">
       <form onSubmit={handleSubmit}>
         <div>
           <label>Username:</label>

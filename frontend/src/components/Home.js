@@ -39,7 +39,7 @@ import jwtDecode from 'jwt-decode';
   // }, []);
 
   return (
-    <div>
+    <div  className="centered-content">
       {currentUser ? (
         <div>
           <h1>Welcome to Jobly, {currentUser.username}!</h1>

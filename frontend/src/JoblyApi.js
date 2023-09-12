@@ -96,10 +96,11 @@ class JoblyApi {
     }
   }
 
-  // // Apply for a job
-  // static async applyForJob(username, jobId) {
-  //   return await this.request(`users/${username}/jobs/${jobId}`, {}, "POST");
-  // }
+  // Step 9.
+  // Apply for a job
+  static async applyForJob(username, jobId) {
+    return await this.request(`users/${username}/jobs/${jobId}`, {}, "POST");
+  }
 
 }
 

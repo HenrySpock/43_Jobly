@@ -110,6 +110,9 @@ import JoblyApi from './JoblyApi';
 
 import jwtDecode from 'jwt-decode';
 
+import './App.css';
+
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || null);
   const [currentUser, setCurrentUser] = useState(null);
@@ -119,6 +122,20 @@ function App() {
     username: '',
     password: ''
   }; 
+
+  // Step 9.
+  const handleApplyToJob = async (jobId) => {
+    try {
+      // Call the API utility to apply for the job
+      await JoblyApi.applyForJob(currentUser.username, jobId);
+
+      // If successful, update the user's applications list in the frontend
+      const updatedApplications = [...currentUser.applications, jobId];
+      setCurrentUser(prevUser => ({ ...prevUser, applications: updatedApplications }));
+    } catch (error) {
+      console.error("Error applying for job:", error);
+    }
+  };
 
   useEffect(() => {
     async function fetchCurrentUser() {
@@ -282,9 +299,15 @@ function App() {
           <Route path="/jobs/:id" element={<JobDetails />} />  */}
 
           <Route path="/companies" element={<Protected element={<CompaniesList />} />} />
-          <Route path="/companies/:handle" element={<Protected element={<CompanyDetails />} />} />
-          <Route path="/jobs/:id" element={<Protected element={<JobDetails />} />} />
           <Route path="/jobs" element={<Protected element={<JobsList />} />} />
+          
+          {/* Step 9. */}
+          {/* <Route path="/companies/:handle" element={<Protected element={<CompanyDetails />} />}  />
+          <Route path="/jobs/:id" element={<Protected element={<JobDetails />} />} /> */}
+          
+          <Route path="/companies/:handle" element={<Protected element={<CompanyDetails user={currentUser} applyToJobFunction={handleApplyToJob} />} />} />
+          <Route path="/jobs/:id" element={<Protected element={<JobDetails user={currentUser} applyToJobFunction={handleApplyToJob}/>} />} />
+           
         </Routes>
       </div>
     </Router>
